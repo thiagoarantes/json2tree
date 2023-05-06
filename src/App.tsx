@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "@/stitches";
 
 const OuterContainer = styled("div", {
   height: "100%",
