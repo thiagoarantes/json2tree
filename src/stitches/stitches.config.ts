@@ -14,6 +14,10 @@ export const {
     colors: {
       gray400: "gainsboro",
       gray500: "lightgray",
+      neutral100: "white",
+      primary400: "#7e62c9",
+      primary500: "#644e9f",
+      errorLight: "#ffeaea",
     },
     space: {
       "0-5": "4px",
@@ -28,11 +32,24 @@ export const {
     bp1: "(min-width: 480px)",
   },
   utils: {
+    /* Margins */
     m: (value: string | number) => ({
       marginLeft: value,
       marginRight: value,
       marginTop: value,
       marginBottom: value,
+    }),
+    mt: (value: string | number) => ({
+      marginTop: value,
+    }),
+    mr: (value: string | number) => ({
+      marginRight: value,
+    }),
+    mb: (value: string | number) => ({
+      marginBottom: value,
+    }),
+    ml: (value: string | number) => ({
+      marginLeft: value,
     }),
     mx: (value: string | number) => ({
       marginLeft: value,
@@ -41,6 +58,33 @@ export const {
     my: (value: string | number) => ({
       marginTop: value,
       marginBottom: value,
+    }),
+    /* Paddings */
+    p: (value: string | number) => ({
+      paddingLeft: value,
+      paddingRight: value,
+      paddingTop: value,
+      paddingBottom: value,
+    }),
+    pt: (value: string | number) => ({
+      paddingTop: value,
+    }),
+    pr: (value: string | number) => ({
+      paddingRight: value,
+    }),
+    pb: (value: string | number) => ({
+      paddingBottom: value,
+    }),
+    pl: (value: string | number) => ({
+      paddingLeft: value,
+    }),
+    px: (value: string | number) => ({
+      paddingLeft: value,
+      paddingRight: value,
+    }),
+    py: (value: string | number) => ({
+      paddingTop: value,
+      paddingBottom: value,
     }),
   },
 });
