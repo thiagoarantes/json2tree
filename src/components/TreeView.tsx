@@ -13,11 +13,28 @@ const TreeView = (props: TreeViewProps) => {
   const formattedObj = JSON.parse(value);
   const isArray = Array.isArray(formattedObj);
 
+  let returnArray: any[] = [];
+
+  if (isArray) {
+    formattedObj.forEach((item: any) => {
+      returnArray.push(["", formattedObj[item]]);
+    });
+  } else {
+    Object.keys(formattedObj).forEach((key: string) => {
+      returnArray.push([key, formattedObj[key]]);
+    });
+  }
+
   return (
     <Container>
       <b>{isArray ? "Array" : "JSON"}</b>
       <br />
-      {value}
+      <br />
+      {returnArray.map(([key, item]) => (
+        <div>
+          {key}: ({typeof item}) {item}
+        </div>
+      ))}
     </Container>
   );
 };
