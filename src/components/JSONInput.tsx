@@ -28,8 +28,10 @@ const StyledButton = styled("button", {
 const StyledTextarea = styled("textarea", {
   flexGrow: 1,
   p: "$2",
+  border: "1px solid $neutral400",
 
   "&:focus-visible": {
+    borderColor: "transparent",
     outline: "3px solid $primary400",
   },
 
@@ -65,12 +67,15 @@ const JSONInput = (props: JSONInputProps) => {
   };
 
   /**
-   * Send valid JSON back to parent component
+   * Update state with current value of JSON input
    */
   const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(event.target.value);
   };
 
+  /**
+   * Send valid JSON back to parent component
+   */
   const handleValueUpdateToParent = () => {
     isJSON(value) && handleUpdateToParent(value);
   };

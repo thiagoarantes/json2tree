@@ -13,15 +13,6 @@ const Container = styled("div", {
   gap: "$2",
 });
 
-const LeftPanel = styled("div", {
-  width: "400px",
-  backgroundColor: "$gray500",
-});
-
-const RightPanel = styled("div", {
-  flexGrow: 1,
-});
-
 function App() {
   const [JSONValue, setJSONValue] = useState<string>(DEFAULT_JSON);
 
@@ -33,12 +24,8 @@ function App() {
 
   return (
     <Container>
-      <LeftPanel>
-        <TreeView value={JSONValue} />
-      </LeftPanel>
-      <RightPanel>
-        <JSONInput value={JSONValue} updateJSONValue={updateJSONValue} />
-      </RightPanel>
+      <TreeView value={JSONValue} />
+      <JSONInput value={JSONValue} updateJSONValue={updateJSONValue} />
     </Container>
   );
 }
