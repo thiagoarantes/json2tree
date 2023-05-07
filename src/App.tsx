@@ -1,8 +1,9 @@
 import { globalCss, reset, styled } from "@/stitches";
+import { JSONInput, TreeView } from "@/components";
 
 const globalStyles = globalCss(reset);
 
-const OuterContainer = styled("div", {
+const Container = styled("div", {
   height: "100%",
   width: "100%",
   display: "flex",
@@ -10,12 +11,12 @@ const OuterContainer = styled("div", {
   gap: "$2",
 });
 
-const TreeViewContainer = styled("div", {
+const RightPanel = styled("div", {
   width: "400px",
   backgroundColor: "$gray500",
 });
 
-const JSONContainer = styled("div", {
+const LeftPanel = styled("div", {
   flexGrow: 1,
   backgroundColor: "$gray400",
 });
@@ -24,10 +25,14 @@ function App() {
   globalStyles();
 
   return (
-    <OuterContainer>
-      <TreeViewContainer>TreeView</TreeViewContainer>
-      <JSONContainer>JSON</JSONContainer>
-    </OuterContainer>
+    <Container>
+      <RightPanel>
+        <TreeView />
+      </RightPanel>
+      <LeftPanel>
+        <JSONInput />
+      </LeftPanel>
+    </Container>
   );
 }
 
