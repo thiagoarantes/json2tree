@@ -10,6 +10,7 @@ const Container = styled("div", {
   display: "flex",
   flexDirection: "column",
   gap: "$2",
+  position: "relative",
 });
 
 const StyledButton = styled("button", {
@@ -39,6 +40,22 @@ const StyledTextarea = styled("textarea", {
     valid: {
       false: {
         backgroundColor: "$errorLight",
+      },
+    },
+  },
+});
+
+const StyleError = styled("div", {
+  position: "absolute",
+  color: "$errorDark",
+  top: "$1",
+  right: "0",
+  fontWeight: "bold",
+
+  variants: {
+    visible: {
+      false: {
+        display: "none",
       },
     },
   },
@@ -91,6 +108,7 @@ const JSONInput = (props: JSONInputProps) => {
         onChange={handleValueChange}
         valid={valid}
       />
+      <StyleError visible={!valid}>JSON not valid!</StyleError>
     </Container>
   );
 };

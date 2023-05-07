@@ -18,6 +18,7 @@ export const {
       primary400: "#7e62c9",
       primary500: "#644e9f",
       errorLight: "#ffeaea",
+      errorDark: "#fc4b4b",
     },
     space: {
       "0-5": "4px",
