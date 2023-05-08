@@ -13,11 +13,11 @@ const StyleTreeViewItem = styled("div", {
 
   variants: {
     variant: {
-      string: { backgroundImage: "url(/icons/string.svg)" },
-      number: { backgroundImage: "url(/icons/number.svg)" },
-      boolean: { backgroundImage: "url(/icons/boolean.svg)" },
-      json: { backgroundImage: "url(/icons/json.svg)" },
-      array: { backgroundImage: "url(/icons/array.svg)" },
+      string: { backgroundImage: "url(icons/string.svg)" },
+      number: { backgroundImage: "url(icons/number.svg)" },
+      boolean: { backgroundImage: "url(icons/boolean.svg)" },
+      json: { backgroundImage: "url(icons/json.svg)" },
+      array: { backgroundImage: "url(icons/array.svg)" },
     },
   },
 });
