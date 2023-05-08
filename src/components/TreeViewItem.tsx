@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { styled } from "@/stitches";
 import { TreeViewItemProps } from "./types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled("div", {
   display: "flex",
@@ -47,9 +48,15 @@ const ChildrenContainer = styled("div", {
 const TreeViewItem = (props: TreeViewItemProps) => {
   const { title, content, format } = props;
 
+  const [isOpen, setIsOpen] = useState<boolean>(true);
+
   const childrenArray: any[] = [];
   const isObject = format === "object";
   let finalFormat = format;
+
+  const toggleChildren = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   if (isObject) {
     const formattedObj = JSON.parse(content);
@@ -75,8 +82,8 @@ const TreeViewItem = (props: TreeViewItemProps) => {
       <Container>
         <ArrowContainer>
           {isObject && (
-            <ArrowButton>
-              <FontAwesomeIcon icon={faCaretDown} />
+            <ArrowButton onClick={toggleChildren}>
+              <FontAwesomeIcon icon={isOpen ? faCaretDown : faCaretRight} />
             </ArrowButton>
           )}
         </ArrowContainer>
@@ -88,7 +95,7 @@ const TreeViewItem = (props: TreeViewItemProps) => {
         </StyleTreeViewItem>
       </Container>
 
-      {childrenArray.length > 0 && (
+      {childrenArray.length > 0 && isOpen && (
         <ChildrenContainer>
           {childrenArray.map(([childTitle, childContent]) => (
             <TreeViewItem
