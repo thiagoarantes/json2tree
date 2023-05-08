@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { styled } from "@/stitches";
 import { TreeViewItemProps } from "./types";
+import { Tooltip } from ".";
 
 const StyleTreeViewItem = styled("div", {
   py: "$1",

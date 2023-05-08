@@ -13,3 +13,10 @@ export interface TreeViewItemProps {
   content: any;
   format: string;
 }
+
+export interface TooltipProps {
+  children: React.ReactNode;
+  content: string;
+  delay?: number;
+  direction?: "top" | "left" | "right" | "bottom";
+}
