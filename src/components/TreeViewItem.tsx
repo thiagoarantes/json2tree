@@ -89,7 +89,10 @@ const TreeViewItem = (props: TreeViewItemProps) => {
         </ArrowContainer>
 
         {/** @todo solve "as any" here */}
-        <StyleTreeViewItem variant={finalFormat as any}>
+        <StyleTreeViewItem
+          variant={finalFormat as any}
+          onClick={toggleChildren}
+        >
           {!!title && `${title}: `}
           {isObject ? `(${finalFormat})` : content}
         </StyleTreeViewItem>
