@@ -1,7 +1,24 @@
 import { v4 as uuidv4 } from "uuid";
 import { styled } from "@/stitches";
 import { TreeViewItemProps } from "./types";
-import { Tooltip } from ".";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+
+const Container = styled("div", {
+  display: "flex",
+  gap: "$0-5",
+});
+
+const ArrowContainer = styled("div", {
+  width: "$space$2",
+  display: "flex",
+  alignItems: "center",
+});
+
+const ArrowButton = styled("div", {
+  border: "none",
+  width: "$2",
+});
 
 const StyleTreeViewItem = styled("div", {
   py: "$1",
@@ -55,11 +72,21 @@ const TreeViewItem = (props: TreeViewItemProps) => {
 
   return (
     <>
-      {/** @todo solve "as any" here */}
-      <StyleTreeViewItem variant={finalFormat as any}>
-        {!!title && `${title}: `}
-        {isObject ? `(${finalFormat})` : content}
-      </StyleTreeViewItem>
+      <Container>
+        <ArrowContainer>
+          {isObject && (
+            <ArrowButton>
+              <FontAwesomeIcon icon={faCaretDown} />
+            </ArrowButton>
+          )}
+        </ArrowContainer>
+
+        {/** @todo solve "as any" here */}
+        <StyleTreeViewItem variant={finalFormat as any}>
+          {!!title && `${title}: `}
+          {isObject ? `(${finalFormat})` : content}
+        </StyleTreeViewItem>
+      </Container>
 
       {childrenArray.length > 0 && (
         <ChildrenContainer>
