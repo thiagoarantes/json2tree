@@ -4,7 +4,7 @@ import { TreeViewItem } from ".";
 
 const Container = styled("div", {
   width: "400px",
-  border: "1px solid $gray500",
+  border: "1px solid $neutral500",
   p: "$2",
   overflow: "auto",
 });
