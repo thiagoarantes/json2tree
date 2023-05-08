@@ -7,3 +7,9 @@ export interface JSONInputProps extends basicProps {
 }
 
 export interface TreeViewProps extends basicProps {}
+
+export interface TreeViewItemProps {
+  title?: string;
+  content: any;
+  format: string;
+}

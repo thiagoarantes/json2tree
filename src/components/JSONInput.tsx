@@ -68,6 +68,14 @@ const JSONInput = (props: JSONInputProps) => {
   const [valid, setValid] = useState<boolean>(true);
 
   /**
+   * Adds double quotes to keys without it
+   */
+  function addQuotesToJSONKeys(jsonString: string): string {
+    const regex = /(?<!")\b(\w+)\b(?=:)/g;
+    return jsonString.replace(regex, '"$1"');
+  }
+
+  /**
    * Validate entered JSON is correct
    */
   const isJSON = (value: string): boolean => {
@@ -94,7 +102,8 @@ const JSONInput = (props: JSONInputProps) => {
    * Send valid JSON back to parent component
    */
   const handleValueUpdateToParent = () => {
-    isJSON(value) && handleUpdateToParent(value);
+    const newValue = addQuotesToJSONKeys(value);
+    isJSON(newValue) && handleUpdateToParent(newValue);
   };
 
   return (
