@@ -51,7 +51,8 @@ const TreeViewItem = (props: TreeViewItemProps) => {
     <>
       {/** @todo solve "as any" here */}
       <StyleTreeViewItem variant={finalFormat as any}>
-        {isObject ? finalFormat : !!title ? `${title}: ${content}` : content}
+        {!!title && `${title}: `}
+        {isObject ? `(${finalFormat})` : content}
       </StyleTreeViewItem>
 
       {childrenArray.length > 0 && (
