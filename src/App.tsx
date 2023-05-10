@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { globalCss, reset, styled } from "@/stitches";
-import { JSONInput, TreeView } from "@/components";
+import { Header, JSONInput, TreeView } from "@/components";
 import { DEFAULT_JSON } from "@/utils";
 
 const globalStyles = globalCss(reset);
@@ -9,7 +9,7 @@ const Container = styled("div", {
   height: "100%",
   width: "100%",
   display: "flex",
-  p: "$2",
+  p: "$7 $2 $2",
   gap: "$2",
 });
 
@@ -24,6 +24,7 @@ function App() {
 
   return (
     <Container>
+      <Header />
       <TreeView value={JSONValue} />
       <JSONInput value={JSONValue} updateJSONValue={updateJSONValue} />
     </Container>

@@ -1,3 +1,4 @@
+export { default as Header } from "./Header";
 export { default as JSONInput } from "./JSONInput";
 export { default as Tooltip } from "./Tooltip";
 export { default as TreeView } from "./TreeView";

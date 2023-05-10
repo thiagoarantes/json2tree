@@ -14,6 +14,7 @@ export const {
     colors: {
       neutral100: "white",
       neutral400: "gainsboro",
+      primary100: "#eee8ff",
       neutral500: "lightgray",
       primary400: "#7e62c9",
       primary500: "#644e9f",
@@ -27,6 +28,8 @@ export const {
       2: "16px",
       3: "24px",
       4: "32px",
+      5: "40px",
+      7: "56px",
     },
   },
   media: {
@@ -35,10 +38,7 @@ export const {
   utils: {
     /* Margins */
     m: (value: string | number) => ({
-      marginLeft: value,
-      marginRight: value,
-      marginTop: value,
-      marginBottom: value,
+      margin: value,
     }),
     mt: (value: string | number) => ({
       marginTop: value,
@@ -62,10 +62,7 @@ export const {
     }),
     /* Paddings */
     p: (value: string | number) => ({
-      paddingLeft: value,
-      paddingRight: value,
-      paddingTop: value,
-      paddingBottom: value,
+      padding: value,
     }),
     pt: (value: string | number) => ({
       paddingTop: value,

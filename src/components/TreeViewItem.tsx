@@ -30,14 +30,26 @@ const StyleTreeViewItem = styled("div", {
   backgroundPosition: "0 9px",
   cursor: "default",
   minWidth: "max-content",
+  position: "relative",
+
+  "&:hover::before": {
+    content: "",
+    position: "absolute",
+    top: "0",
+    bottom: "0",
+    left: "-$1",
+    right: "-$1",
+    zIndex: -1,
+    backgroundColor: "$primary100",
+  },
 
   variants: {
     variant: {
       string: { backgroundImage: "url(icons/string.svg)" },
       number: { backgroundImage: "url(icons/number.svg)" },
       boolean: { backgroundImage: "url(icons/boolean.svg)" },
-      json: { backgroundImage: "url(icons/json.svg)" },
-      array: { backgroundImage: "url(icons/array.svg)" },
+      json: { backgroundImage: "url(icons/json.svg)", cursor: "pointer" },
+      array: { backgroundImage: "url(icons/array.svg)", cursor: "pointer" },
     },
   },
 });
