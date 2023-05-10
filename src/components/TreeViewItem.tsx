@@ -105,6 +105,7 @@ const TreeViewItem = (props: TreeViewItemProps) => {
         <StyleTreeViewItem
           variant={finalFormat as any}
           onClick={toggleChildren}
+          title={finalFormat}
         >
           {!!title && `${title}: `}
           {isObject ? `(${finalFormat})` : content}
