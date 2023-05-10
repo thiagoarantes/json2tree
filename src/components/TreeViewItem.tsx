@@ -112,6 +112,9 @@ const TreeViewItem = (props: TreeViewItemProps) => {
         </StyleTreeViewItem>
       </Container>
 
+      {/**
+       * Recursive call of component itself in case of a json or an array
+       */}
       {childrenArray.length > 0 && isOpen && (
         <ChildrenContainer>
           {childrenArray.map(([childTitle, childContent]) => (
