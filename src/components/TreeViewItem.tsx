@@ -29,6 +29,7 @@ const StyleTreeViewItem = styled("div", {
   backgroundSize: "$space$2",
   backgroundPosition: "0 9px",
   cursor: "default",
+  minWidth: "max-content",
 
   variants: {
     variant: {
