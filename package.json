@@ -1,7 +1,7 @@
 {
   "name": "json2tree",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "homepage": "http://thiagoarantes.github.io/json2tree",
   "scripts": {
